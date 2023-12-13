@@ -74,3 +74,38 @@
     @apply bg-background text-foreground;
   }
 }
+
+.h1{
+  @apply text-[32px]
+}
+.h2{
+  @apply text-[30px]
+}
+.h3{
+  @apply text-[28px]
+}
+.h4{
+   @apply text-[26px]
+ }
+.h5{
+  @apply text-[24px]
+}
+.h6{
+  @apply text-[22px]
+}
+.title-2{
+  @apply text-[20px]
+}
+.title-2{
+  @apply text-[18px]
+}
+p{
+  @apply text-[16px]
+}
+.caption{
+  @apply text-[12px]
+}
+
+.overline{
+  @apply text-[10px]
+}
