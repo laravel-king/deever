@@ -11,6 +11,7 @@ import {
     MenubarShortcut,
     MenubarTrigger
 } from "@/components/ui/menubar";
+import Link from "next/link";
 
 const Header = () =>{
     return (
@@ -19,11 +20,18 @@ const Header = () =>{
             <div>
                 <AppLogo />
             </div>
-            <div className="hidden md:flex">
-                <Menubar>
+            <div className="hidden md:flex space-x-2">
+                <Menubar className="border-0 shadow-none hover:border hover:border-slate-200 hover:shadow-sm w-28 justify-center">
+                    <MenubarMenu>
+                        <MenubarTrigger className="cursor-pointer">
+                            <Link href="/" className="cursor-pointer">Dashboard</Link>
+                        </MenubarTrigger>
+                    </MenubarMenu>
+                </Menubar>
+                <Menubar className="border-0 shadow-none hover:border hover:border-slate-200 hover:shadow-sm w-28 justify-center">
                     <MenubarMenu>
                         <MenubarTrigger className="cursor-pointer">File</MenubarTrigger>
-                        <MenubarContent>
+                        <MenubarContent alignOffset={-32}>
                             <MenubarItem>
                                 New Tab <MenubarShortcut>⌘T</MenubarShortcut>
                             </MenubarItem>
@@ -56,10 +64,6 @@ const Header = () =>{
                           </MenubarContent>
                       </MenubarMenu>
                   </Menubar>
-                  <div className="relative">
-                      <Button variant="ghost" size="icon">
-                      </Button>
-                  </div>
 
                   <Menubar className="border-0 shadow-none">
                       <MenubarMenu>
@@ -69,15 +73,13 @@ const Header = () =>{
                                   <AvatarFallback>CN</AvatarFallback>
                               </Avatar>
                           </MenubarTrigger>
-                          <MenubarContent align="end">
+                          <MenubarContent align="end" alignOffset={2}>
                               <MenubarItem>
-                                  New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+                                  <Link href="/login">Login</Link>
                               </MenubarItem>
-                              <MenubarItem>New Window</MenubarItem>
                               <MenubarSeparator />
-                              <MenubarItem>Share</MenubarItem>
-                              <MenubarSeparator />
-                              <MenubarItem>Print</MenubarItem>
+                              <MenubarItem><Link href="/login">Register</Link>
+                              </MenubarItem>
                           </MenubarContent>
                       </MenubarMenu>
                   </Menubar>
