@@ -1,6 +1,6 @@
 import AppLogo from "@/components/AppLogo";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
-import {Button} from "@/components/ui/button";
+import {Button, buttonVariants} from "@/components/ui/button";
 import {BellIcon, ChevronRightIcon} from "@radix-ui/react-icons";
 import {Badge} from "@/components/ui/badge";
 import {
@@ -8,44 +8,28 @@ import {
     MenubarContent,
     MenubarItem,
     MenubarMenu, MenubarSeparator,
-    MenubarShortcut,
     MenubarTrigger
 } from "@/components/ui/menubar";
 import Link from "next/link";
+import {Input} from "@/components/ui/input";
 
 const Header = () =>{
     return (
-        <header className="px-8 py-4 ">
-          <div className="flex items-center justify-between">
-            <div>
+        <header className="px-6 py-4">
+          <div className="flex items-center justify-between space-x-2">
+            <div className="md:w-48">
                 <AppLogo />
             </div>
-            <div className="hidden md:flex space-x-2">
-                <Menubar className="border-0 shadow-none hover:border hover:border-slate-200 hover:shadow-sm w-28 justify-center">
-                    <MenubarMenu>
-                        <MenubarTrigger className="cursor-pointer">
-                            <Link href="/" className="cursor-pointer">Dashboard</Link>
-                        </MenubarTrigger>
-                    </MenubarMenu>
-                </Menubar>
-                <Menubar className="border-0 shadow-none hover:border hover:border-slate-200 hover:shadow-sm w-28 justify-center">
-                    <MenubarMenu>
-                        <MenubarTrigger className="cursor-pointer">File</MenubarTrigger>
-                        <MenubarContent alignOffset={-32}>
-                            <MenubarItem>
-                                New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                            </MenubarItem>
-                            <MenubarItem>New Window</MenubarItem>
-                            <MenubarSeparator />
-                            <MenubarItem>Share</MenubarItem>
-                            <MenubarSeparator />
-                            <MenubarItem>Print</MenubarItem>
-                        </MenubarContent>
-                    </MenubarMenu>
-                </Menubar>
-
+            <div className="flex w-1/2 border-b">
+                <Input type="text" placeholder="search" className="w-2/3 text-sm tracking-wide border-transparent shadow-none focus-visible:ring-transparent focus:border-transparent focus:outline-none" />
             </div>
-              <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2">
+                  <div className="hidden md:flex">
+                      <Button className={buttonVariants({variant: "default", className: "bg-indigo-700 text-white hover:bg-indigo-600 hover:text-white"} )}>Add Funds</Button>
+                  </div>
+                  <div className="hidden md:flex">
+                      <Button>Move Money</Button>
+                  </div>
                   <Menubar>
                       <MenubarMenu>
                           <MenubarTrigger className="cursor-pointer relative">
@@ -54,7 +38,7 @@ const Header = () =>{
                           </MenubarTrigger>
                           <MenubarContent align="end">
                               <MenubarItem>
-                                  New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+                                  New Tab
                               </MenubarItem>
                               <MenubarItem>New Window</MenubarItem>
                               <MenubarSeparator />
@@ -65,7 +49,7 @@ const Header = () =>{
                       </MenubarMenu>
                   </Menubar>
 
-                  <Menubar className="border-0 shadow-none">
+                  <Menubar className="border-0 shadow-none px-0">
                       <MenubarMenu>
                           <MenubarTrigger>
                               <Avatar className="cursor-pointer">
