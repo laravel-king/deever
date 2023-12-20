@@ -11,7 +11,7 @@ const Page = () =>{
                 <Card className="max-w-md w-full">
                     <CardHeader>
                         <CardTitle className="text-2xl text-center">
-                            <AppLogo />
+                            <h1>Login Page</h1>
                         </CardTitle>
                         <CardDescription className="text-center">
                             Please enter your username and password to login or use your social media account.
